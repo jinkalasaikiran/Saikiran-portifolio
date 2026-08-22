@@ -6,510 +6,3308 @@
 
     <title>Sai Kiran Jinkala | Senior DevOps Engineer</title>
 
-    <meta name="description"
-          content="Sai Kiran Jinkala- DevOps Engineer specializing in AWS, Kubernetes, Docker, Terraform, CI/CD and cloud infrastructure.">
+    <meta
+        name="description"
+        content="Sai Kiran Jinkala — Senior DevOps Engineer specializing in AWS, Kubernetes, Terraform, Jenkins, GitLab, CI/CD, DevSecOps and cloud infrastructure."
+    >
 
-    <link rel="stylesheet" href="style.css">
+    <meta name="theme-color" content="#0b1220">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        :root {
+            --bg: #07111f;
+            --bg-soft: #0b1627;
+            --card: rgba(15, 27, 45, 0.78);
+            --card-solid: #0e1a2b;
+
+            --text: #f7fbff;
+            --text-soft: #c4cfdd;
+            --muted: #8d9bad;
+
+            --blue: #2997ff;
+            --blue-bright: #55adff;
+            --blue-dark: #0878e8;
+
+            --border: rgba(255, 255, 255, 0.09);
+            --border-blue: rgba(41, 151, 255, 0.32);
+
+            --shadow:
+                0 25px 70px rgba(0, 0, 0, 0.35);
+
+            --max-width: 1180px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(41, 151, 255, 0.10),
+                    transparent 28%
+                ),
+                radial-gradient(
+                    circle at 90% 30%,
+                    rgba(0, 116, 255, 0.07),
+                    transparent 30%
+                ),
+                var(--bg);
+
+            color: var(--text);
+
+            font-family: "Inter", sans-serif;
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: "";
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            opacity: 0.18;
+
+            background-image:
+                linear-gradient(
+                    rgba(255, 255, 255, 0.025) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(255, 255, 255, 0.025) 1px,
+                    transparent 1px
+                );
+
+            background-size: 60px 60px;
+
+            mask-image: linear-gradient(
+                to bottom,
+                black,
+                transparent 90%
+            );
+
+            z-index: -2;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        .container {
+            width: min(
+                var(--max-width),
+                calc(100% - 40px)
+            );
+
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           DEVOPS BACKGROUND ELEMENTS
+        ========================================================= */
+
+        .devops-background {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .cloud-shape {
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(41, 151, 255, 0.10),
+                    transparent 68%
+                );
+
+            filter: blur(20px);
+        }
+
+        .cloud-one {
+            top: 10%;
+            left: -100px;
+        }
+
+        .cloud-two {
+            top: 50%;
+            right: -120px;
+        }
+
+        .cloud-three {
+            bottom: -100px;
+            left: 35%;
+        }
+
+        .terminal-decoration {
+            position: absolute;
+
+            padding: 20px;
+
+            border: 1px solid rgba(41, 151, 255, 0.08);
+
+            border-radius: 16px;
+
+            color: rgba(84, 173, 255, 0.08);
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 12px;
+
+            transform: rotate(-8deg);
+
+            white-space: nowrap;
+        }
+
+        .terminal-one {
+            top: 24%;
+            left: 4%;
+        }
+
+        .terminal-two {
+            top: 66%;
+            right: 3%;
+            transform: rotate(8deg);
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        header {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            z-index: 1000;
+
+            background: rgba(7, 17, 31, 0.78);
+
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid transparent;
+
+            transition: 0.3s ease;
+        }
+
+        header.scrolled {
+            border-bottom-color: var(--border);
+        }
+
+        .navbar {
+            width: min(
+                var(--max-width),
+                calc(100% - 40px)
+            );
+
+            height: 74px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 19px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.04em;
+        }
+
+        .logo span {
+            color: var(--blue);
+        }
+
+        .nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-soft);
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            transition: 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue-bright);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding: 140px 0 100px;
+
+            position: relative;
+        }
+
+        .hero-content {
+            width: min(
+                var(--max-width),
+                calc(100% - 40px)
+            );
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.15fr)
+                minmax(300px, 0.85fr);
+
+            align-items: center;
+
+            gap: 70px;
+        }
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+        .intro {
+            margin-bottom: 12px;
+
+            color: var(--blue-bright);
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.08em;
+
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin-bottom: 8px;
+
+            font-size: clamp(
+                48px,
+                7vw,
+                82px
+            );
+
+            line-height: 0.98;
+
+            letter-spacing: -0.065em;
+        }
+
+        .hero h2 {
+            margin-bottom: 28px;
+
+            color: var(--blue);
+
+            font-size: clamp(
+                25px,
+                3vw,
+                38px
+            );
+
+            line-height: 1.1;
+
+            letter-spacing: -0.04em;
+        }
+
+        .hero-description {
+            max-width: 670px;
+
+            margin-bottom: 32px;
+
+            color: var(--text-soft);
+
+            font-size: 17px;
+        }
+
+        .hero-buttons {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 48px;
+
+            padding: 0 18px;
+
+            border-radius: 10px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            transition: 0.25s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn.primary {
+            background: var(--blue);
+
+            color: white;
+
+            box-shadow:
+                0 12px 30px rgba(
+                    41,
+                    151,
+                    255,
+                    0.22
+                );
+        }
+
+        .btn.primary:hover {
+            background: var(--blue-dark);
+        }
+
+        .btn.secondary {
+            border: 1px solid var(--border);
+
+            background: rgba(
+                255,
+                255,
+                255,
+                0.025
+            );
+
+            color: var(--text);
+        }
+
+
+        /* =========================================================
+           PROFILE IMAGE
+        ========================================================= */
+
+        .hero-image {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+        }
+
+        .profile-wrapper {
+            position: relative;
+
+            width: 330px;
+            height: 330px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .profile-glow {
+            position: absolute;
+
+            width: 330px;
+            height: 330px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(41, 151, 255, 0.25),
+                    transparent 65%
+                );
+
+            filter: blur(12px);
+        }
+
+        .profile-ring {
+            position: absolute;
+
+            inset: 8px;
+
+            border: 1px solid
+                rgba(41, 151, 255, 0.45);
+
+            border-radius: 50%;
+        }
+
+        .profile-ring::before {
+            content: "";
+
+            position: absolute;
+
+            top: 14px;
+            right: 40px;
+
+            width: 9px;
+            height: 9px;
+
+            border-radius: 50%;
+
+            background: var(--blue-bright);
+
+            box-shadow:
+                0 0 0 8px
+                rgba(41, 151, 255, 0.10),
+                0 0 25px
+                rgba(41, 151, 255, 0.65);
+        }
+
+        .profile-image {
+            position: relative;
+
+            z-index: 2;
+
+            width: 260px;
+            height: 260px;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            border-radius: 50%;
+
+            border: 6px solid
+                rgba(255, 255, 255, 0.06);
+
+            box-shadow:
+                0 30px 80px
+                rgba(0, 0, 0, 0.45);
+        }
+
+
+        /* =========================================================
+           SECTIONS
+        ========================================================= */
+
+        .section {
+            padding: 110px 0;
+
+            position: relative;
+        }
+
+        .dark-section {
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(255,255,255,0.015),
+                    rgba(41,151,255,0.025)
+                );
+        }
+
+        .section-title {
+            margin-bottom: 50px;
+        }
+
+        .section-title p {
+            margin-bottom: 8px;
+
+            color: var(--blue);
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: 0.08em;
+        }
+
+        .section-title h2 {
+            font-size: clamp(
+                34px,
+                5vw,
+                56px
+            );
+
+            line-height: 1;
+
+            letter-spacing: -0.055em;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-content {
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1.3fr)
+                minmax(300px, 0.7fr);
+
+            gap: 70px;
+
+            align-items: start;
+        }
+
+        .about-content > div:first-child p {
+            margin-bottom: 22px;
+
+            color: var(--text-soft);
+
+            font-size: 16px;
+        }
+
+        .about-content > div:first-child p:first-child {
+            color: var(--text);
+
+            font-size: 21px;
+
+            font-weight: 500;
+
+            line-height: 1.55;
+        }
+
+        .about-card {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 12px;
+        }
+
+        .about-card > div {
+            padding: 25px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+
+            background: var(--card);
+
+            backdrop-filter: blur(10px);
+        }
+
+        .about-card strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: var(--blue-bright);
+
+            font-size: 27px;
+
+            letter-spacing: -0.04em;
+        }
+
+        .about-card span {
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 14px;
+        }
+
+        .skill-card {
+            padding: 25px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            background: var(--card);
+
+            backdrop-filter: blur(12px);
+
+            transition: 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-6px);
+
+            border-color: var(--border-blue);
+
+            box-shadow: var(--shadow);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 18px;
+
+            font-size: 17px;
+        }
+
+        .skill-card p {
+            display: inline-block;
+
+            margin: 0 5px 7px 0;
+
+            padding: 5px 8px;
+
+            border-radius: 6px;
+
+            background: rgba(
+                41,
+                151,
+                255,
+                0.08
+            );
+
+            color: var(--text-soft);
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 10px;
+        }
+
+
+        /* =========================================================
+           PROVEN IMPACT
+        ========================================================= */
+
+        .impact-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 16px;
+        }
+
+        .impact-card {
+            position: relative;
+
+            padding: 30px;
+
+            min-height: 220px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(41,151,255,0.08),
+                    rgba(255,255,255,0.015)
+                );
+
+            overflow: hidden;
+
+            transition: 0.3s ease;
+        }
+
+        .impact-card::after {
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+            height: 130px;
+
+            right: -50px;
+            bottom: -50px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(41,151,255,0.08);
+
+            filter: blur(15px);
+        }
+
+        .impact-card:hover {
+            transform: translateY(-6px);
+
+            border-color: var(--border-blue);
+        }
+
+        .impact-icon {
+            margin-bottom: 30px;
+
+            color: var(--blue-bright);
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 14px;
+        }
+
+        .impact-card h3 {
+            margin-bottom: 10px;
+
+            font-size: 19px;
+        }
+
+        .impact-card p {
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           EXPERIENCE
+        ========================================================= */
+
+        .timeline {
+            position: relative;
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+
+            left: 7px;
+
+            top: 10px;
+            bottom: 10px;
+
+            width: 1px;
+
+            background:
+                linear-gradient(
+                    var(--blue),
+                    rgba(41,151,255,0.05)
+                );
+        }
+
+        .timeline-item {
+            position: relative;
+
+            display: grid;
+
+            grid-template-columns: 35px 1fr;
+
+            gap: 28px;
+
+            padding-bottom: 60px;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: relative;
+
+            z-index: 2;
+
+            width: 15px;
+            height: 15px;
+
+            margin-top: 6px;
+
+            border-radius: 50%;
+
+            background: var(--blue);
+
+            box-shadow:
+                0 0 0 7px
+                rgba(41,151,255,0.10),
+                0 0 25px
+                rgba(41,151,255,0.35);
+        }
+
+        .timeline-content {
+            padding: 30px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+
+            background: var(--card);
+
+            backdrop-filter: blur(12px);
+        }
+
+        .date {
+            display: inline-block;
+
+            margin-bottom: 10px;
+
+            color: var(--blue-bright);
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 11px;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 3px;
+
+            font-size: 24px;
+
+            letter-spacing: -0.03em;
+        }
+
+        .timeline-content h4 {
+            margin-bottom: 24px;
+
+            color: var(--text-soft);
+
+            font-size: 14px;
+
+            font-weight: 500;
+        }
+
+        .timeline-content ul {
+            padding-left: 20px;
+        }
+
+        .timeline-content li {
+            margin-bottom: 11px;
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+        .timeline-content li::marker {
+            color: var(--blue);
+        }
+
+
+        /* =========================================================
+           PROJECTS
+        ========================================================= */
+
+        .project-intro {
+            max-width: 680px;
+
+            margin-top: -30px;
+
+            margin-bottom: 45px;
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .project-card {
+            perspective: 1400px;
+
+            min-height: 440px;
+        }
+
+        .project-inner {
+            position: relative;
+
+            width: 100%;
+            height: 440px;
+
+            transform-style: preserve-3d;
+
+            transition:
+                transform 0.75s
+                cubic-bezier(
+                    0.22,
+                    0.61,
+                    0.36,
+                    1
+                );
+
+            cursor: pointer;
+        }
+
+        .project-card.flipped .project-inner {
+            transform: rotateY(180deg);
+        }
+
+        .project-front,
+        .project-back {
+            position: absolute;
+
+            inset: 0;
+
+            width: 100%;
+            height: 100%;
+
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+
+            border: 1px solid var(--border);
+
+            border-radius: 24px;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(18,35,58,0.95),
+                    rgba(8,17,30,0.96)
+                );
+
+            box-shadow:
+                0 20px 60px
+                rgba(0,0,0,0.18);
+        }
+
+        .project-front {
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 35px;
+
+            text-align: center;
+        }
+
+        .project-front::before {
+            content: "";
+
+            position: absolute;
+
+            width: 260px;
+            height: 260px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(41,151,255,0.10);
+
+            filter: blur(35px);
+        }
+
+        .project-logo {
+            position: relative;
+
+            z-index: 1;
+
+            width: 145px;
+            height: 145px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 32px;
+
+            border: 1px solid
+                rgba(255,255,255,0.12);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.08),
+                    rgba(255,255,255,0.025)
+                );
+
+            color: white;
+
+            font-size: 27px;
+
+            font-weight: 800;
+
+            letter-spacing: -0.06em;
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.30);
+
+            transition: 0.35s ease;
+        }
+
+        .project-card:hover .project-logo {
+            transform: scale(1.05);
+
+            border-color:
+                rgba(41,151,255,0.45);
+
+            box-shadow:
+                0 20px 60px
+                rgba(41,151,255,0.15);
+        }
+
+        .project-logo.pepsico {
+            background:
+                linear-gradient(
+                    145deg,
+                    #0066b3,
+                    #0097e8
+                );
+        }
+
+        .project-logo.sofi {
+            background:
+                linear-gradient(
+                    145deg,
+                    #00a9a5,
+                    #006f72
+                );
+        }
+
+        .project-logo.invest {
+            background:
+                linear-gradient(
+                    145deg,
+                    #6956d9,
+                    #31267d
+                );
+        }
+
+        .project-front h3 {
+            position: relative;
+
+            z-index: 1;
+
+            margin-top: 30px;
+
+            margin-bottom: 6px;
+
+            font-size: 23px;
+
+            letter-spacing: -0.04em;
+        }
+
+        .project-front p {
+            position: relative;
+
+            z-index: 1;
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+        .click-hint {
+            position: absolute;
+
+            bottom: 25px;
+
+            color: var(--blue-bright);
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 9px;
+
+            letter-spacing: 0.06em;
+
+            text-transform: uppercase;
+        }
+
+        .project-back {
+            transform: rotateY(180deg);
+
+            padding: 27px;
+
+            overflow-y: auto;
+        }
+
+        .project-back::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .project-back::-webkit-scrollbar-thumb {
+            background: var(--blue);
+            border-radius: 20px;
+        }
+
+        .project-number {
+            margin-bottom: 7px;
+
+            color: var(--blue);
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 10px;
+        }
+
+        .project-back h3 {
+            margin-bottom: 6px;
+
+            font-size: 22px;
+
+            letter-spacing: -0.04em;
+        }
+
+        .project-role {
+            margin-bottom: 18px;
+
+            color: var(--blue-bright);
+
+            font-size: 12px;
+
+            font-weight: 600;
+        }
+
+        .project-detail {
+            margin-bottom: 18px;
+        }
+
+        .project-detail strong {
+            display: block;
+
+            margin-bottom: 5px;
+
+            color: var(--text);
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.06em;
+        }
+
+        .project-detail p {
+            color: var(--muted);
+
+            font-size: 11px;
+
+            line-height: 1.65;
+        }
+
+        .project-stack {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 5px;
+        }
+
+        .project-stack span {
+            padding: 4px 7px;
+
+            border-radius: 5px;
+
+            background:
+                rgba(41,151,255,0.09);
+
+            color: var(--text-soft);
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 8px;
+        }
+
+        .project-link {
+            display: inline-flex;
+
+            margin-top: 5px;
+
+            padding: 8px 11px;
+
+            border-radius: 7px;
+
+            background: var(--blue);
+
+            color: white;
+
+            font-size: 10px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================================
+           EDUCATION
+        ========================================================= */
+
+        .education-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+        }
+
+        .education-card {
+            position: relative;
+
+            padding: 32px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 20px;
+
+            background: var(--card);
+
+            overflow: hidden;
+
+            transition: 0.3s ease;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+
+            border-color: var(--border-blue);
+        }
+
+        .education-card::after {
+            content: "";
+
+            position: absolute;
+
+            right: -50px;
+            bottom: -70px;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(41,151,255,0.08);
+
+            filter: blur(20px);
+        }
+
+        .education-year {
+            margin-bottom: 20px;
+
+            color: var(--blue);
+
+            font-family: "JetBrains Mono", monospace;
+
+            font-size: 11px;
+        }
+
+        .education-card h3 {
+            margin-bottom: 7px;
+
+            font-size: 21px;
+        }
+
+        .education-card h4 {
+            margin-bottom: 5px;
+
+            color: var(--text-soft);
+
+            font-size: 14px;
+        }
+
+        .education-card p {
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 55px 0 35px;
+
+            border-top: 1px solid var(--border);
+
+            background:
+                rgba(0,0,0,0.14);
+        }
+
+        .footer-main {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+
+            margin-bottom: 30px;
+        }
+
+        .footer-name {
+            font-size: 18px;
+
+            font-weight: 700;
+        }
+
+        .footer-role {
+            color: var(--muted);
+
+            font-size: 11px;
+        }
+
+        .social-links {
+            display: flex;
+
+            gap: 9px;
+        }
+
+        .social-links a {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 40px;
+            height: 40px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 10px;
+
+            color: var(--text-soft);
+
+            font-size: 11px;
+
+            transition: 0.2s ease;
+        }
+
+        .social-links a:hover {
+            border-color: var(--blue);
+
+            color: var(--blue);
+
+            transform: translateY(-3px);
+        }
+
+        .disclaimer {
+            padding-top: 22px;
+
+            border-top: 1px solid var(--border);
+
+            color: var(--muted);
+
+            font-size: 10px;
+
+            line-height: 1.7;
+        }
+
+        .copyright {
+            margin-top: 15px;
+
+            color: #667386;
+
+            font-size: 10px;
+        }
+
+
+        /* =========================================================
+           SCROLL ANIMATION
+        ========================================================= */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(28px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            .hero-content {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .hero-text {
+                max-width: 800px;
+
+                margin: auto;
+            }
+
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+            .impact-grid {
+                grid-template-columns:
+                    1fr 1fr;
+            }
+        }
+
+        @media (max-width: 760px) {
+
+            .container,
+            .navbar,
+            .hero-content {
+                width: calc(100% - 28px);
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .profile-wrapper {
+                width: 270px;
+                height: 270px;
+            }
+
+            .profile-glow {
+                width: 270px;
+                height: 270px;
+            }
+
+            .profile-image {
+                width: 215px;
+                height: 215px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid,
+            .education-grid,
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-main {
+                align-items: flex-start;
+
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 520px) {
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero h2 {
+                font-size: 27px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .about-card {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-content {
+                padding: 23px;
+            }
+
+            .timeline-content h3 {
+                font-size: 20px;
+            }
+
+            .project-card,
+            .project-inner {
+                min-height: 420px;
+
+                height: 420px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+
+                animation-iteration-count: 1 !important;
+
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-<!-- Navigation -->
-<header>
-    <nav class="navbar">
-        <div class="logo">Sai Kiran<span>Jinkala</span></div>
+    <!-- =========================================================
+         DEVOPS BACKGROUND
+    ========================================================== -->
 
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <div class="devops-background" aria-hidden="true">
 
+        <div class="cloud-shape cloud-one"></div>
+        <div class="cloud-shape cloud-two"></div>
+        <div class="cloud-shape cloud-three"></div>
 
-<!-- Hero Section -->
-<section id="home" class="hero">
+        <div class="terminal-decoration terminal-one">
+            $ terraform plan → kubectl apply → monitor
+        </div>
 
-    <div class="hero-content">
-
-        <p class="intro">Hello, I'm</p>
-
-        <h1>Sai Kiran Jinkala</h1>
-
-        <h2>Senior DevOps Engineer</h2>
-
-        <p class="hero-description">
-            DevOps Engineer with 4+ years of experience building,
-            automating and maintaining scalable, reliable and
-            production-ready cloud infrastructure.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="#projects" class="btn primary">View Projects</a>
-
-            <a href="assets/Sai-Devops-Resume.pdf"
-               class="btn secondary"
-               target="_blank">
-                Download Resume
-            </a>
+        <div class="terminal-decoration terminal-two">
+            CI/CD → BUILD → TEST → DEPLOY → OBSERVE
         </div>
 
     </div>
 
-</section>
 
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
 
-<!-- About -->
-<section id="about" class="section">
+    <header id="header">
 
-    <div class="section-title">
-        <p>GET TO KNOW ME</p>
-        <h2>About Me</h2>
-    </div>
+        <nav class="navbar">
 
-    <div class="about-content">
-
-        <div>
-            <p>
-                Senior DevOps Engineer with4 plus years of hands-on experience in designing, 
-                automating, and managing cloud infrastructure and CI/CD pipelines for enterprise applications.
-            </p>
-
-            <p>
-                Experienced in AWS, Kubernetes, Docker, Terraform, Jenkins, GitLab, and DevSecOps practices
-                to build secure, scalable, and highly available production environments. Strong expertise in
-                infrastructure as code, container orchestration, release management, production incident handling and
-                continuous delivery with a focus on improving deployment reliability, automation and
-                operational excellence through modern cloud-native technologies..
-            </p>
-
-            <p>
-                Passionate about solving complex production challenges, optimizing deployment pipelines and
-                collaborating across teams to deliver secure, scalable cloud-native solutions.
-            </p>
-        </div>
-
-        <div class="about-card">
-
-            <div>
-                <strong>4+</strong>
-                <span>Years Experience</span>
-            </div>
-
-            <div>
-                <strong>AWS</strong>
-                <span>Cloud Platform</span>
-            </div>
-
-            <div>
-                <strong>K8s</strong>
-                <span>Container Orchestration</span>
-            </div>
-
-            <div>
-                <strong>IaC</strong>
-                <span>Terraform</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- Skills -->
-<section id="skills" class="section dark-section">
-
-    <div class="section-title">
-        <p>WHAT I WORK WITH</p>
-        <h2>Technical Skills</h2>
-    </div>
-
-    <div class="skills-grid">
-
-        <div class="skill-card">
-            <h3>Cloud</h3>
-            <p>AWS</p>
-            <p>Azure</p>
-            <p>EC2</p>
-            <p>S3</p>
-            <p>VPC</p>
-            <p>IAM</p>
-            <p>ALB</p>
-        </div>
-
-        <div class="skill-card">
-            <h3>Containers</h3>
-            <p>Docker</p>
-            <p>Kubernetes</p>
-            <p>EKS</p>
-            <p>Docker Compose</p>
-            <p>NGINX</p>
-        </div>
-
-        <div class="skill-card">
-            <h3>CI/CD</h3>
-            <p>Jenkins</p>
-            <p>GitLab CI/CD</p>
-            <p>GitHub</p>
-            <p>Maven</p>
-            <p>SonarQube</p>
-        </div>
-
-        <div class="skill-card">
-            <h3>Infrastructure</h3>
-            <p>Terraform</p>
-            <p>Linux</p>
-            <p>Bash</p>
-            <p>Git</p>
-            <p>Networking</p>
-        </div>
-
-        <div class="skill-card">
-            <h3>Monitoring</h3>
-            <p>Prometheus</p>
-            <p>Grafana</p>
-            <p>Application Monitoring</p>
-            <p>Log Analysis</p>
-        </div>
-
-        <div class="skill-card">
-            <h3>DevOps</h3>
-            <p>CI/CD Automation</p>
-            <p>Infrastructure as Code</p>
-            <p>Production Deployments</p>
-            <p>Incident Troubleshooting</p>
-            <p>High Availability</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- Experience -->
-<section id="experience" class="section">
-
-    <div class="section-title">
-        <p>MY CAREER</p>
-        <h2>Experience</h2>
-    </div>
-
-    <div class="timeline">
-
-        <!-- Wipro -->
-        <div class="timeline-item">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-
-                <span class="date">June 2022 - July 2024</span>
-
-                <h3>DevOps Engineer</h3>
-
-                <h4>Wipro</h4>
-
-                <ul>
-                    <li>
-                        Configured and maintained Jenkins CI/CD pipelines integrated
-                        with Git via webhooks, automating Maven-based builds, testing,
-                        artifact generation, and deployments.
-                    </li>
-
-                    <li>
-                        Provisioned and managed AWS cloud resources including EC2,
-                        S3, VPC, and IAM using Terraform and reusable Infrastructure
-                        as Code configurations.
-                    </li>
-
-                    <li>
-                        Monitored Kubernetes cluster health, application availability,
-                        deployment performance, and resource utilization using
-                        Prometheus, Grafana, and Amazon EKS.
-                    </li>
-
-                    <li>
-                        Maintained Git branching strategies and release workflows
-                        across development teams, ensuring controlled version
-                        management and consistent software delivery.
-                    </li>
-
-                    <li>
-                        Coordinated incident response during critical production
-                        outages, supported root cause analysis and deployment
-                        recovery, and contributed to reliable service restoration.
-                    </li>
-                </ul>
-
-            </div>
-
-        </div>
-
-
-        <!-- Nfinity Global -->
-        <div class="timeline-item">
-
-            <div class="timeline-dot"></div>
-
-            <div class="timeline-content">
-
-                <span class="date">January 2025 - Present</span>
-
-                <h3>Senior DevOps Engineer</h3>
-
-                <h4>Nfinity Global</h4>
-
-                <ul>
-                    <li>
-                        Designed, implemented, and maintained CI/CD pipelines using Git, Jenkins, 
-                        Maven, and SonarQube to automate application build, testing, and deployment
-                    </li>
-
-                    <li>
-                        Containerized Spring Boot microservices using Docker and deployed applications
-                        to Amazon EKS using rolling updates, blue-green deployments, and automated rollback strategies.
-                    </li>
-
-                    <li>
-                        Provisioned and maintained AWS and Azure cloud infrastructure using Terraform (IaC), 
-                        developing reusable infrastructure modules for dev, staging, and production environments.
-                    </li>
-
-                    <li>
-                        Executed end-to-end release management including versioning, artifact packaging, CI/CD pipeline 
-                        execution, release approvals, deployment validation, smoke testing, and recovery procedures.
-                    </li>
-
-                    <li>
-                        Managed P1 and P2 production incidents across cloud, platform, and application layers, performed
-                        root cause analysis, supported deployment recovery, and ensured timely issue resolution.
-                    </li>
-                </ul>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- Projects -->
-<section id="projects" class="section dark-section">
-
-    <div class="section-title">
-        <p>MY WORK</p>
-        <h2>Featured Projects</h2>
-    </div>
-
-
-    <div class="projects-grid">
-
-        <!-- Project 1 -->
-        <div class="project-card">
-
-            <div class="project-number">01</div>
-
-            <h3>Production E-Commerce Platform</h3>
-
-            <p>
-                Designed and deployed a scalable microservices-based
-                e-commerce application using AWS, Docker and
-                Kubernetes.
-            </p>
-
-            <div class="project-tech">
-                <span>AWS</span>
-                <span>EKS</span>
-                <span>Docker</span>
-                <span>Terraform</span>
-                <span>GitLab CI/CD</span>
-            </div>
-
-            <a href="#" class="project-link">
-                GitHub →
+            <a href="#home" class="logo">
+                Sai Kiran<span>.</span>
             </a>
 
-        </div>
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+
+                <li>
+                    <a href="#experience">Experience</a>
+                </li>
+
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#impact">Impact</a>
+                </li>
+
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </header>
 
 
-        <!-- Project 2 -->
-        <div class="project-card">
+    <main>
 
-            <div class="project-number">02</div>
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
 
-            <h3>CI/CD Automation</h3>
+        <section id="home" class="hero">
 
-            <p>
-                Built an automated CI/CD pipeline covering source
-                control, code quality, application packaging,
-                container image creation and Kubernetes deployment.
-            </p>
+            <div class="hero-content">
 
-            <div class="project-tech">
-                <span>Jenkins</span>
-                <span>GitHub</span>
-                <span>Maven</span>
-                <span>SonarQube</span>
-                <span>Docker</span>
-                <span>ECR</span>
+                <div class="hero-text reveal">
+
+                    <p class="intro">
+                        Hello, I'm
+                    </p>
+
+                    <h1>
+                        Sai Kiran Jinkala
+                    </h1>
+
+                    <h2>
+                        Senior DevOps Engineer
+                    </h2>
+
+                    <p class="hero-description">
+                        Senior DevOps Engineer with 4+ years of hands-on
+                        experience designing, automating and managing
+                        cloud infrastructure, Kubernetes platforms and
+                        CI/CD pipelines for enterprise applications.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#projects"
+                            class="btn primary"
+                        >
+                            View Projects
+                        </a>
+
+                        <a
+                            href="assets/Sai-Devops-Resume.pdf"
+                            class="btn secondary"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Download Resume
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE IMAGE -->
+
+                <div class="hero-image reveal">
+
+                    <div class="profile-wrapper">
+
+                        <div class="profile-glow"></div>
+
+                        <div class="profile-ring"></div>
+
+                        <img
+                            src="assets/Saikiran-profile.png"
+                            alt="Sai Kiran Jinkala - Senior DevOps Engineer"
+                            class="profile-image"
+                        >
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <a href="#" class="project-link">
-                GitHub →
-            </a>
-
-        </div>
+        </section>
 
 
-        <!-- Project 3 -->
-        <div class="project-card">
+        <!-- =====================================================
+             ABOUT
+        ====================================================== -->
 
-            <div class="project-number">03</div>
+        <section
+            id="about"
+            class="section"
+        >
 
-            <h3>AWS Infrastructure Automation</h3>
+            <div class="container">
 
-            <p>
-                Provisioned reusable AWS infrastructure using
-                Terraform with networking, compute, security and
-                application infrastructure components.
-            </p>
+                <div class="section-title reveal">
 
-            <div class="project-tech">
-                <span>Terraform</span>
-                <span>AWS</span>
-                <span>VPC</span>
-                <span>EC2</span>
-                <span>IAM</span>
+                    <p>
+                        GET TO KNOW ME
+                    </p>
+
+                    <h2>
+                        About Me
+                    </h2>
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <div class="reveal">
+
+                        <p>
+                            Senior DevOps Engineer with 4+ years of
+                            hands-on experience in AWS cloud
+                            infrastructure, Kubernetes, Terraform,
+                            GitLab, Jenkins and CI/CD automation.
+                        </p>
+
+                        <p>
+                            I specialize in building scalable deployment
+                            pipelines, managing production Kubernetes
+                            workloads, implementing Infrastructure as
+                            Code, and supporting secure and reliable
+                            cloud-native environments.
+                        </p>
+
+                        <p>
+                            My experience spans infrastructure
+                            provisioning, container orchestration,
+                            release management, deployment strategies,
+                            production incident response, monitoring
+                            and DevSecOps practices.
+                        </p>
+
+                        <p>
+                            I enjoy solving complex production challenges,
+                            improving delivery workflows and collaborating
+                            with engineering teams to create reliable,
+                            secure and operationally efficient platforms.
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-card reveal">
+
+                        <div>
+                            <strong>4+</strong>
+                            <span>Years Experience</span>
+                        </div>
+
+                        <div>
+                            <strong>AWS</strong>
+                            <span>Primary Cloud Platform</span>
+                        </div>
+
+                        <div>
+                            <strong>K8s</strong>
+                            <span>Container Orchestration</span>
+                        </div>
+
+                        <div>
+                            <strong>IaC</strong>
+                            <span>Terraform</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <a href="#" class="project-link">
-                GitHub →
-            </a>
-
-        </div>
+        </section>
 
 
-        <!-- Project 4 -->
-        <div class="project-card">
+        <!-- =====================================================
+             SKILLS
+        ====================================================== -->
 
-            <div class="project-number">04</div>
+        <section
+            id="skills"
+            class="section dark-section"
+        >
 
-            <h3>Kubernetes Production Deployment</h3>
+            <div class="container">
 
-            <p>
-                Created production-ready Kubernetes deployments
-                with resource limits, health probes, rolling updates,
-                namespaces, node scheduling and service exposure.
-            </p>
+                <div class="section-title reveal">
 
-            <div class="project-tech">
-                <span>Kubernetes</span>
-                <span>EKS</span>
-                <span>Ingress</span>
-                <span>Helm</span>
+                    <p>
+                        WHAT I WORK WITH
+                    </p>
+
+                    <h2>
+                        Technical Skills
+                    </h2>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+                    <div class="skill-card reveal">
+
+                        <h3>
+                            Cloud Platform
+                        </h3>
+
+                        <p>AWS</p>
+                        <p>Azure</p>
+                        <p>EC2</p>
+                        <p>S3</p>
+                        <p>VPC</p>
+                        <p>IAM</p>
+                        <p>ECR</p>
+                        <p>RDS</p>
+                        <p>SNS</p>
+                        <p>EKS</p>
+                        <p>CloudWatch</p>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <h3>
+                            Containers & Orchestration
+                        </h3>
+
+                        <p>Docker</p>
+                        <p>Kubernetes</p>
+                        <p>EKS</p>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <h3>
+                            CI/CD & IaC
+                        </h3>
+
+                        <p>Jenkins</p>
+                        <p>GitLab</p>
+                        <p>Terraform</p>
+                        <p>CI/CD</p>
+                        <p>Infrastructure as Code</p>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <h3>
+                            Security
+                        </h3>
+
+                        <p>SonarQube</p>
+                        <p>Trivy</p>
+                        <p>WAF</p>
+                        <p>TFSec</p>
+                        <p>IAM</p>
+                        <p>Security Groups</p>
+                        <p>Secret Manager</p>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <h3>
+                            Version Control
+                        </h3>
+
+                        <p>Git</p>
+                        <p>GitHub</p>
+                        <p>GitLab</p>
+                        <p>Branching Strategies</p>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <h3>
+                            OS & Scripting
+                        </h3>
+
+                        <p>Red Hat Enterprise Linux</p>
+                        <p>Amazon Linux</p>
+                        <p>Python</p>
+                        <p>Bash</p>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <h3>
+                            Deployment Strategies
+                        </h3>
+
+                        <p>Blue-Green</p>
+                        <p>Canary</p>
+                        <p>Rolling Updates</p>
+                        <p>Rollback</p>
+
+                    </div>
+
+
+                    <div class="skill-card reveal">
+
+                        <h3>
+                            Monitoring & ITSM
+                        </h3>
+
+                        <p>Prometheus</p>
+                        <p>Grafana</p>
+                        <p>ELK Stack</p>
+                        <p>CloudWatch</p>
+                        <p>Jira</p>
+                        <p>Incident Management</p>
+
+                    </div>
+
+                </div>
+
             </div>
 
-            <a href="#" class="project-link">
-                GitHub →
-            </a>
+        </section>
+
+
+        <!-- =====================================================
+             EXPERIENCE
+        ====================================================== -->
+
+        <section
+            id="experience"
+            class="section"
+        >
+
+            <div class="container">
+
+                <div class="section-title reveal">
+
+                    <p>
+                        MY CAREER
+                    </p>
+
+                    <h2>
+                        Experience
+                    </h2>
+
+                </div>
+
+
+                <div class="timeline">
+
+                    <!-- CURRENT ROLE -->
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-content">
+
+                            <span class="date">
+                                January 2025 — Present
+                            </span>
+
+                            <h3>
+                                Senior DevOps Engineer
+                            </h3>
+
+                            <h4>
+                                Nfinity Global
+                            </h4>
+
+                            <ul>
+
+                                <li>
+                                    Designed and maintained enterprise
+                                    CI/CD capabilities using Git workflows,
+                                    Maven and SonarQube, developing
+                                    reusable pipeline patterns for
+                                    consistent software delivery.
+                                </li>
+
+                                <li>
+                                    Containerized Java microservices with
+                                    Docker and orchestrated deployments
+                                    on Kubernetes/EKS using blue-green,
+                                    rolling update and automated rollback
+                                    strategies.
+                                </li>
+
+                                <li>
+                                    Provisioned and maintained AWS and
+                                    Azure infrastructure using Terraform,
+                                    developing reusable infrastructure
+                                    modules for development, staging and
+                                    production environments.
+                                </li>
+
+                                <li>
+                                    Managed end-to-end release activities
+                                    including versioning, artifact
+                                    packaging, CI/CD execution, approvals,
+                                    smoke testing, deployment validation
+                                    and recovery procedures.
+                                </li>
+
+                                <li>
+                                    Supported P1/P2 production incidents
+                                    across cloud, platform and application
+                                    layers, contributing to root cause
+                                    analysis, recovery and post-incident
+                                    improvements.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PREVIOUS ROLE -->
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-content">
+
+                            <span class="date">
+                                June 2022 — July 2024
+                            </span>
+
+                            <h3>
+                                DevOps Engineer
+                            </h3>
+
+                            <h4>
+                                Wipro
+                            </h4>
+
+                            <ul>
+
+                                <li>
+                                    Configured and maintained Jenkins
+                                    CI/CD pipelines integrated with Git
+                                    webhooks, automating Maven builds,
+                                    testing, artifact generation and
+                                    deployments.
+                                </li>
+
+                                <li>
+                                    Provisioned and managed AWS resources
+                                    including EC2, S3, VPC and IAM using
+                                    reusable Terraform Infrastructure as
+                                    Code configurations.
+                                </li>
+
+                                <li>
+                                    Monitored Kubernetes cluster health,
+                                    application availability, deployment
+                                    performance and resource utilization
+                                    using Prometheus, Grafana and EKS.
+                                </li>
+
+                                <li>
+                                    Maintained Git branching strategies
+                                    and release workflows across
+                                    development teams to support controlled
+                                    version management and consistent
+                                    delivery.
+                                </li>
+
+                                <li>
+                                    Coordinated production incident
+                                    response, root cause analysis and
+                                    deployment recovery to support reliable
+                                    service restoration.
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROJECTS
+        ====================================================== -->
+
+        <section
+            id="projects"
+            class="section dark-section"
+        >
+
+            <div class="container">
+
+                <div class="section-title reveal">
+
+                    <p>
+                        PROFESSIONAL PROJECTS
+                    </p>
+
+                    <h2>
+                        Projects
+                    </h2>
+
+                </div>
+
+                <p class="project-intro reveal">
+                    Select a project logo to expand it. The card flips
+                    to reveal the application context, infrastructure
+                    architecture focus, DevOps responsibilities and
+                    technology stack. Select the card again to return
+                    to the project logo.
+                </p>
+
+
+                <div class="projects-grid">
+
+
+                    <!-- =================================================
+                         PROJECT 1 — PEPSICO
+                    ================================================== -->
+
+                    <article
+                        class="project-card reveal"
+                        tabindex="0"
+                        role="button"
+                        aria-label="Open PepsiCo project details"
+                        onclick="toggleProject(this)"
+                        onkeydown="handleProjectKey(event, this)"
+                    >
+
+                        <div class="project-inner">
+
+                            <!-- FRONT -->
+
+                            <div class="project-front">
+
+                                <div
+                                    class="project-logo pepsico"
+                                    aria-hidden="true"
+                                >
+                                    PEPSI<br>
+                                    CO
+                                </div>
+
+                                <h3>
+                                    PepsiCo
+                                </h3>
+
+                                <p>
+                                    Food & Beverage
+                                </p>
+
+                                <span class="click-hint">
+                                    Click logo to explore
+                                </span>
+
+                            </div>
+
+
+                            <!-- BACK -->
+
+                            <div class="project-back">
+
+                                <div class="project-number">
+                                    PROJECT 01
+                                </div>
+
+                                <h3>
+                                    PepsiCo
+                                </h3>
+
+                                <div class="project-role">
+                                    DevOps Engineer · Food & Beverage
+                                </div>
+
+
+                                <div class="project-detail">
+
+                                    <strong>
+                                        Application
+                                    </strong>
+
+                                    <p>
+                                        Enterprise application environment
+                                        supporting a food and beverage
+                                        business domain, with DevOps
+                                        responsibilities focused on reliable
+                                        application delivery and cloud
+                                        operations.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="project-detail">
+
+                                    <strong>
+                                        Infrastructure Architecture
+                                    </strong>
+
+                                    <p>
+                                        Cloud infrastructure and application
+                                        delivery architecture centered on
+                                        AWS services, containerization,
+                                        Kubernetes orchestration,
+                                        Infrastructure as Code, CI/CD,
+                                        security and observability.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="project-detail">
+
+                                    <strong>
+                                        DevOps Focus
+                                    </strong>
+
+                                    <p>
+                                        CI/CD automation, infrastructure
+                                        provisioning, containerized
+                                        deployments, release management,
+                                        deployment strategies, monitoring
+                                        and production support.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="project-detail">
+
+                                    <strong>
+                                        Technology Stack
+                                    </strong>
+
+                                    <div class="project-stack">
+
+                                        <span>AWS</span>
+                                        <span>EC2</span>
+                                        <span>S3</span>
+                                        <span>VPC</span>
+                                        <span>IAM</span>
+                                        <span>ECR</span>
+                                        <span>EKS</span>
+                                        <span>RDS</span>
+                                        <span>CloudWatch</span>
+                                        <span>Docker</span>
+                                        <span>Kubernetes</span>
+                                        <span>Jenkins</span>
+                                        <span>GitLab</span>
+                                        <span>Terraform</span>
+                                        <span>SonarQube</span>
+                                        <span>Trivy</span>
+                                        <span>Prometheus</span>
+                                        <span>Grafana</span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <a
+                                    href="https://www.labs.pepsico.com/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-link"
+                                    onclick="event.stopPropagation()"
+                                >
+                                    Project / Company →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         PROJECT 2 — SOFI INSURANCE
+                    ================================================== -->
+
+                    <article
+                        class="project-card reveal"
+                        tabindex="0"
+                        role="button"
+                        aria-label="Open SoFi Insurance project details"
+                        onclick="toggleProject(this)"
+                        onkeydown="handleProjectKey(event, this)"
+                    >
+
+                        <div class="project-inner">
+
+                            <!-- FRONT -->
+
+                            <div class="project-front">
+
+                                <div
+                                    class="project-logo sofi"
+                                    aria-hidden="true"
+                                >
+                                    SoFi
+                                </div>
+
+                                <h3>
+                                    SoFi Insurance
+                                </h3>
+
+                                <p>
+                                    Insurance Application
+                                </p>
+
+                                <span class="click-hint">
+                                    Click logo to explore
+                                </span>
+
+                            </div>
+
+
+                            <!-- BACK -->
+
+                            <div class="project-back">
+
+                                <div class="project-number">
+                                    PROJECT 02
+                                </div>
+
+                                <h3>
+                                    SoFi Insurance
+                                </h3>
+
+                                <div class="project-role">
+                                    DevOps Engineer · Insurance Application
+                                </div>
+
+
+                                <div class="project-detail">
+
+                                    <strong>
+                                        Application
+                                    </strong>
+
+                                    <p>
+                                        Digital insurance application
+                                        environment supporting customer
+                                        insurance services, with DevOps
+                                        responsibilities focused on
+                                        application delivery, cloud
+                                        infrastructure and operational
+                                        reliability.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="project-detail">
+
+                                    <strong>
+                                        Infrastructure Architecture
+                                    </strong>
+
+                                    <p>
+                                        AWS-oriented cloud infrastructure
+                                        with containerization,
+                                        Kubernetes orchestration,
+                                        Infrastructure as Code, automated
+                                        delivery pipelines, security
+                                        controls and monitoring.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="project-detail">
+
+                                    <strong>
+                                        DevOps Focus
+                                    </strong>
+
+                                    <p>
+                                        Automated build and deployment
+                                        workflows, infrastructure
+                                        provisioning, release management,
+                                        production monitoring, incident
+                                        handling and secure delivery.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="project-detail">
+
+                                    <strong>
+                                        Technology Stack
+                                    </strong>
+
+                                    <div class="project-stack">
+
+                                        <span>AWS</span>
+                                        <span>EC2</span>
+                                        <span>S3</span>
+                                        <span>VPC</span>
+                                        <span>IAM</span>
+                                        <span>ECR</span>
+                                        <span>RDS</span>
+                                        <span>EKS</span>
+                                        <span>SNS</span>
+                                        <span>CloudWatch</span>
+                                        <span>Docker</span>
+                                        <span>Kubernetes</span>
+                                        <span>Jenkins</span>
+                                        <span>GitLab</span>
+                                        <span>Terraform</span>
+                                        <span>WAF</span>
+                                        <span>Trivy</span>
+                                        <span>Prometheus</span>
+                                        <span>Grafana</span>
+                                        <span>ELK</span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <a
+                                    href="https://www.sofi.com/online-insurance/life-insurance/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-link"
+                                    onclick="event.stopPropagation()"
+                                >
+                                    Project / Company →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================================
+                         PROJECT 3 — SOFI INVEST
+                    ================================================== -->
+
+                    <article
+                        class="project-card reveal"
+                        tabindex="0"
+                        role="button"
+                        aria-label="Open SoFi Invest project details"
+                        onclick="toggleProject(this)"
+                        onkeydown="handleProjectKey(event, this)"
+                    >
+
+                        <div class="project-inner">
+
+                            <!-- FRONT -->
+
+                            <div class="project-front">
+
+                                <div
+                                    class="project-logo invest"
+                                    aria-hidden="true"
+                                >
+                                    SoFi<br>
+                                    INVEST
+                                </div>
+
+                                <h3>
+                                    SoFi Invest
+                                </h3>
+
+                                <p>
+                                    Investment / Crypto Application
+                                </p>
+
+                                <span class="click-hint">
+                                    Click logo to explore
+                                </span>
+
+                            </div>
+
+
+                            <!-- BACK -->
+
+                            <div class="project-back">
+
+                                <div class="project-number">
+                                    PROJECT 03
+                                </div>
+
+                                <h3>
+                                    SoFi Invest
+                                </h3>
+
+                                <div class="project-role">
+                                    DevOps Engineer · Investment / Crypto
+                                </div>
+
+
+                                <div class="project-detail">
+
+                                    <strong>
+                                        Application
+                                    </strong>
+
+                                    <p>
+                                        Digital investment application
+                                        environment supporting investment
+                                        services, with DevOps responsibilities
+                                        centered on cloud infrastructure,
+                                        application delivery and operational
+                                        reliability.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="project-detail">
+
+                                    <strong>
+                                        Infrastructure Architecture
+                                    </strong>
+
+                                    <p>
+                                        Cloud-native delivery architecture
+                                        combining AWS infrastructure,
+                                        containers, Kubernetes,
+                                        Infrastructure as Code, CI/CD,
+                                        security tooling and centralized
+                                        monitoring.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="project-detail">
+
+                                    <strong>
+                                        DevOps Focus
+                                    </strong>
+
+                                    <p>
+                                        CI/CD automation, infrastructure
+                                        provisioning, container orchestration,
+                                        secure deployments, release
+                                        management, observability and
+                                        production incident response.
+                                    </p>
+
+                                </div>
+
+
+                                <div class="project-detail">
+
+                                    <strong>
+                                        Technology Stack
+                                    </strong>
+
+                                    <div class="project-stack">
+
+                                        <span>AWS</span>
+                                        <span>Azure</span>
+                                        <span>EC2</span>
+                                        <span>VPC</span>
+                                        <span>IAM</span>
+                                        <span>ECR</span>
+                                        <span>RDS</span>
+                                        <span>EKS</span>
+                                        <span>CloudWatch</span>
+                                        <span>Docker</span>
+                                        <span>Kubernetes</span>
+                                        <span>Jenkins</span>
+                                        <span>GitLab</span>
+                                        <span>Terraform</span>
+                                        <span>SonarQube</span>
+                                        <span>TFSec</span>
+                                        <span>Secret Manager</span>
+                                        <span>Prometheus</span>
+                                        <span>Grafana</span>
+                                        <span>ELK</span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <a
+                                    href="https://www.sofi.com/invest/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="project-link"
+                                    onclick="event.stopPropagation()"
+                                >
+                                    Project / Company →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             PROVEN IMPACT
+        ====================================================== -->
+
+        <section
+            id="impact"
+            class="section"
+        >
+
+            <div class="container">
+
+                <div class="section-title reveal">
+
+                    <p>
+                        ENGINEERING OUTCOMES
+                    </p>
+
+                    <h2>
+                        Proven Impact
+                    </h2>
+
+                </div>
+
+
+                <div class="impact-grid">
+
+                    <div class="impact-card reveal">
+
+                        <div class="impact-icon">
+                            01 / DELIVERY
+                        </div>
+
+                        <h3>
+                            Faster Deployment Workflows
+                        </h3>
+
+                        <p>
+                            Built and maintained CI/CD automation to
+                            standardize build, testing, artifact
+                            packaging and deployment workflows across
+                            application environments.
+                        </p>
+
+                    </div>
+
+
+                    <div class="impact-card reveal">
+
+                        <div class="impact-icon">
+                            02 / INFRASTRUCTURE
+                        </div>
+
+                        <h3>
+                            Repeatable Infrastructure Delivery
+                        </h3>
+
+                        <p>
+                            Developed reusable Terraform infrastructure
+                            configurations and modules to support
+                            consistent cloud environments across
+                            development, staging and production.
+                        </p>
+
+                    </div>
+
+
+                    <div class="impact-card reveal">
+
+                        <div class="impact-icon">
+                            03 / RELIABILITY
+                        </div>
+
+                        <h3>
+                            Production System Reliability
+                        </h3>
+
+                        <p>
+                            Supported Kubernetes workloads, deployment
+                            validation, rollback procedures, monitoring
+                            and P1/P2 incident recovery to strengthen
+                            production operational reliability.
+                        </p>
+
+                    </div>
+
+
+                    <div class="impact-card reveal">
+
+                        <div class="impact-icon">
+                            04 / RELEASES
+                        </div>
+
+                        <h3>
+                            Controlled Release Management
+                        </h3>
+
+                        <p>
+                            Managed versioning, artifact packaging,
+                            approvals, smoke testing, deployment
+                            validation and recovery procedures for
+                            reliable production releases.
+                        </p>
+
+                    </div>
+
+
+                    <div class="impact-card reveal">
+
+                        <div class="impact-icon">
+                            05 / AUTOMATION
+                        </div>
+
+                        <h3>
+                            Operational Automation
+                        </h3>
+
+                        <p>
+                            Applied automation across infrastructure,
+                            CI/CD and deployment workflows to reduce
+                            repetitive operational effort and improve
+                            delivery consistency.
+                        </p>
+
+                    </div>
+
+
+                    <div class="impact-card reveal">
+
+                        <div class="impact-icon">
+                            06 / OBSERVABILITY
+                        </div>
+
+                        <h3>
+                            Continuous Monitoring
+                        </h3>
+
+                        <p>
+                            Used Prometheus, Grafana, ELK and CloudWatch
+                            to monitor application and infrastructure
+                            health and support proactive operational
+                            troubleshooting.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             EDUCATION
+        ====================================================== -->
+
+        <section
+            id="education"
+            class="section dark-section"
+        >
+
+            <div class="container">
+
+                <div class="section-title reveal">
+
+                    <p>
+                        EDUCATION
+                    </p>
+
+                    <h2>
+                        Academic Background
+                    </h2>
+
+                </div>
+
+
+                <div class="education-grid">
+
+
+                    <!-- MASTER'S -->
+
+                    <article class="education-card reveal">
+
+                        <div class="education-year">
+                            2021 — 2023
+                        </div>
+
+                        <h3>
+                            Master's Degree
+                        </h3>
+
+                        <h4>
+                            Sri Indu College of Engineering &
+                            Technology
+                        </h4>
+
+                        <p>
+                            Affiliated to Osmania University
+                        </p>
+
+                    </article>
+
+
+                    <!-- BACHELOR'S -->
+
+                    <article class="education-card reveal">
+
+                        <div class="education-year">
+                            2021
+                        </div>
+
+                        <h3>
+                            Bachelor's Degree
+                        </h3>
+
+                        <h4>
+                            Sreenidhi Institute of Science &
+                            Technology
+                        </h4>
+
+                        <p>
+                            Computer Science / Computer-related
+                            undergraduate education · Osmania University
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             CONNECT
+        ====================================================== -->
+
+        <section class="section">
+
+            <div class="container">
+
+                <div class="section-title reveal">
+
+                    <p>
+                        CONNECT
+                    </p>
+
+                    <h2>
+                        Let's build reliable systems.
+                    </h2>
+
+                </div>
+
+                <div
+                    class="about-content reveal"
+                    style="grid-template-columns: 1fr;"
+                >
+
+                    <p
+                        style="
+                            max-width: 700px;
+                            color: var(--text-soft);
+                            font-size: 16px;
+                        "
+                    >
+                        Interested in DevOps, cloud infrastructure,
+                        Kubernetes, CI/CD automation, Infrastructure as
+                        Code and cloud-native engineering opportunities.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="mailto:jinkalasaikiranyadav@gmail.com"
+                            class="btn primary"
+                        >
+                            Email Me
+                        </a>
+
+                        <a
+                            href="https://www.linkedin.com/in/jinkalasaikiran/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn secondary"
+                        >
+                            LinkedIn ↗
+                        </a>
+
+                        <a
+                            href="https://github.com/jinkalasaikiran"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="btn secondary"
+                        >
+                            GitHub ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-main">
+
+                <div>
+
+                    <div class="footer-name">
+                        Sai Kiran Jinkala
+                    </div>
+
+                    <div class="footer-role">
+                        Senior DevOps Engineer · Hyderabad, Telangana
+                    </div>
+
+                </div>
+
+
+                <div class="social-links">
+
+                    <a
+                        href="https://www.linkedin.com/in/jinkalasaikiran/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                    >
+                        in
+                    </a>
+
+                    <a
+                        href="https://github.com/jinkalasaikiran"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="GitHub"
+                    >
+                        GH
+                    </a>
+
+                    <a
+                        href="mailto:jinkalasaikiranyadav@gmail.com"
+                        aria-label="Email"
+                    >
+                        @
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="disclaimer">
+
+                <strong>
+                    Disclaimer:
+                </strong>
+
+                The project descriptions presented on this portfolio
+                summarize professional DevOps experience and
+                responsibilities. Company and product names are used
+                solely to describe professional project context. This
+                portfolio does not represent or imply ownership,
+                endorsement or affiliation beyond the professional
+                experience described.
+
+                <div class="copyright">
+                    © <span id="currentYear"></span>
+                    Sai Kiran Jinkala. All rights reserved.
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
-
-</section>
+    </footer>
 
 
-<!-- Certifications -->
-<section class="section">
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
 
-    <div class="section-title">
-        <p>LEARNING</p>
-        <h2>Certifications & Learning</h2>
-    </div>
+    <script>
 
-    <div class="certifications">
+        /* =========================================================
+           NAVBAR SCROLL
+        ========================================================== */
 
-        <div class="cert-card">
-            <h3>AWS</h3>
-            <p>Cloud & Infrastructure</p>
-        </div>
+        const header =
+            document.getElementById("header");
 
-        <div class="cert-card">
-            <h3>Kubernetes</h3>
-            <p>Container Orchestration</p>
-        </div>
+        window.addEventListener(
+            "scroll",
+            () => {
 
-        <div class="cert-card">
-            <h3>Terraform</h3>
-            <p>Infrastructure as Code</p>
-        </div>
+                if (window.scrollY > 20) {
+                    header.classList.add("scrolled");
+                } else {
+                    header.classList.remove("scrolled");
+                }
 
-        <div class="cert-card">
-            <h3>DevOps</h3>
-            <p>CI/CD & Automation</p>
-        </div>
-
-    </div>
-
-</section>
+            },
+            { passive: true }
+        );
 
 
-<!-- Contact -->
-<section id="contact" class="section dark-section">
+        /* =========================================================
+           PROJECT FLIP
+        ========================================================== */
 
-    <div class="section-title">
-        <p>GET IN TOUCH</p>
-        <h2>Contact Me</h2>
-    </div>
+        function toggleProject(card) {
 
-    <div class="contact-content">
+            const isFlipped =
+                card.classList.contains("flipped");
 
-        <p>
-            I'm open to discussing DevOps opportunities,
-            cloud projects and interesting technical challenges.
-        </p>
+            // Close all other cards first.
+            document
+                .querySelectorAll(".project-card.flipped")
+                .forEach((project) => {
 
-        <div class="contact-links">
+                    if (project !== card) {
+                        project.classList.remove("flipped");
+                    }
 
-            <a href="mailto:jinkalasaikiranyadav@gmail.com">
-                📧 Email
-            </a>
+                });
 
-            <a href="https://www.linkedin.com/in/jinkalasaikiran/"
-               target="_blank">
-                💼 LinkedIn
-            </a>
+            card.classList.toggle(
+                "flipped",
+                !isFlipped
+            );
 
-            <a href="https://github.com/jinkalasaikiran"
-               target="_blank">
-                💻 GitHub
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
+        }
 
 
-<!-- Footer -->
-<footer>
+        /* =========================================================
+           PROJECT KEYBOARD ACCESSIBILITY
+        ========================================================== */
 
-    <p>
-        © 2026 Sai Kiran. Built with HTML & CSS.
-    </p>
+        function handleProjectKey(
+            event,
+            card
+        ) {
 
-</footer>
+            if (
+                event.key === "Enter" ||
+                event.key === " "
+            ) {
 
+                event.preventDefault();
+
+                toggleProject(card);
+
+            }
+
+        }
+
+
+        /* =========================================================
+           CLOSE PROJECT WHEN CLICKING OUTSIDE
+        ========================================================== */
+
+        document.addEventListener(
+            "click",
+            (event) => {
+
+                const project =
+                    event.target.closest(
+                        ".project-card"
+                    );
+
+                if (!project) {
+
+                    document
+                        .querySelectorAll(
+                            ".project-card.flipped"
+                        )
+                        .forEach((card) => {
+
+                            card.classList.remove(
+                                "flipped"
+                            );
+
+                        });
+
+                }
+
+            }
+        );
+
+
+        /* =========================================================
+           SCROLL REVEAL
+        ========================================================== */
+
+        const revealObserver =
+            new IntersectionObserver(
+                (entries, observer) => {
+
+                    entries.forEach((entry) => {
+
+                        if (
+                            entry.isIntersecting
+                        ) {
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.12,
+                    rootMargin:
+                        "0px 0px -40px 0px"
+                }
+            );
+
+
+        document
+            .querySelectorAll(".reveal")
+            .forEach((element) => {
+
+                revealObserver.observe(
+                    element
+                );
+
+            });
+
+
+        /* =========================================================
+           CURRENT YEAR
+        ========================================================== */
+
+        document.getElementById(
+            "currentYear"
+        ).textContent =
+            new Date().getFullYear();
+
+    </script>
 
 </body>
 </html>
